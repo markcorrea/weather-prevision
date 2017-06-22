@@ -1,0 +1,84 @@
+{
+  "data": {
+    "id": 8,
+    "name": "Timbó",
+    "state": {
+      "id": 2,
+      "name": "Santa Catarina",
+      "initials": "sc"
+    },
+    "weather": {
+      "id": 1,
+      "name": "sun",
+      "url": "sun.png"
+    },
+    "temperature": 26,
+    "max": 30,
+    "min": 21,
+    "umidity": 70,
+    "wind": 2,
+    "nextDays": [
+      {
+        "day": "Seg",
+        "weather": {
+          "id": 1,
+          "name": "sun",
+          "url": "sun.png"
+        },
+        "min": "21",
+        "max": "30"
+      },
+      {
+        "day": "Ter",
+        "weather": {
+          "id": 5,
+          "name": "cloudy",
+          "url": "cloudy.png"
+        },
+        "min": "15",
+        "max": "22"
+      },
+      {
+        "day": "Qua",
+        "weather": {
+          "id": 2,
+          "name": "rain",
+          "url": "rain.png"
+        },
+        "min": "14",
+        "max": "20"
+      },
+      {
+        "day": "Qui",
+        "weather": {
+          "id": 3,
+          "name": "storm",
+          "url": "storm.png"
+        },
+        "min": "11",
+        "max": "19"
+      },
+      {
+        "day": "Sex",
+        "weather": {
+          "id": 4,
+          "name": "night",
+          "url": "night.png"
+        },
+        "min": "15",
+        "max": "25"
+      },
+      {
+        "day": "Sab",
+        "weather": {
+          "id": 2,
+          "name": "rain",
+          "url": "rain.png"
+        },
+        "min": "17",
+        "max": "28"
+      }
+    ]
+  },
+  "status": "success"
+}

@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Blumenau",
+      "state": 2,
+      "weather": {
+        "id": 5,
+        "name": "cloudy",
+        "url": "cloudy.png"
+      },
+      "max": 25,
+      "min": 14
+    },
+    {
+      "id": 6,
+      "name": "Joinville",
+      "state": 2,
+      "weather": {
+        "id": 3,
+        "name": "storm",
+        "url": "storm.png"
+      },
+      "max": 22,
+      "min": 14
+    },
+    {
+      "id": 7,
+      "name": "Indaial",
+      "state": 2,
+      "weather": {
+        "id": 3,
+        "name": "storm",
+        "url": "storm.png"
+      },
+      "max": 23,
+      "min": 12
+    },
+    {
+      "id": 8,
+      "name": "Timbó",
+      "state": 2,
+      "weather": {
+        "id": 1,
+        "name": "sun",
+        "url": "sun.png"
+      },
+      "max": 30,
+      "min": 21
+    }
+  ],
+  "status": "success"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "forecast",
+  "authors": [
+    "Marcus Corrêa Coelho <mrc.correa@gmail.com>"
+  ],
+  "description": "Forecast project",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "devDepenencies": {
+    "jquery": "^2.2.3"
+  },
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "angular": "1.5.8",
+    "bootstrap": "^3.3.6",
+    "angular-bootstrap": "~0.14.3",
+    "angular-ui-router": "0.2.18",
+    "angular-resource": "1.5.8",
+    "fontawesome": "^4.3.0",
+    "AdminLTE": "admin-lte#^2.3.11",
+    "angular-chart.js": "^1.0.3",
+    "chart.js": "^2.3.0"
+  }
+}

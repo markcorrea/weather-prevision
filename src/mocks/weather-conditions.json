@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "sun",
+      "url": "sun.png"
+    },
+    {
+      "id": 2,
+      "name": "rain",
+      "url": "rain.png"
+    },
+    {
+      "id": 3,
+      "name": "storm",
+      "url": "storm.png"
+    },
+    {
+      "id": 4,
+      "name": "night",
+      "url": "night.png"
+    },
+    {
+      "id": 5,
+      "name": "cloudy",
+      "url": "cloudy.png"
+    }
+  ]
+}

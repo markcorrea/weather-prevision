@@ -1,0 +1,25 @@
+{
+  "name": "forecast",
+  "version": "1.0.0",
+  "description": "forecast app",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcus Correa",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-replace": "^0.5.4",
+    "gulp-watch": "^4.3.11",
+    "run-sequence": "~1.1.2"
+  },
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}

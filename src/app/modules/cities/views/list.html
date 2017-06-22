@@ -1,0 +1,75 @@
+<div class="container body-padding">
+    <div class="row">
+        <div class="col-md-4 col-sm-12">
+            <div class="container-block round-full">
+                <h1 class="hidden-xs">Cadastrar</h1>
+                <h3 class="visible-xs">Cadastrar</h3>
+                <form ng-submit="addCity(city)">
+                    <div class="form-group form-group-select">
+                        <select class="form-control" name="state" id="state" ng-model="state"
+                                ng-options="item.name for item in states track by item.id" ng-change="setCity(state)">
+                            <option value="">Estado</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-group-select">
+                        <select class="form-control"
+                                name="city"
+                                id="city"
+                                ng-model="city"
+                                ng-disabled="!state"
+                                ng-options="item.name for item in cities track by item.id">
+                            <option value="">Cidade</option>
+                        </select>
+                    </div>
+                    <button type="submit" ng-disabled="!state || !city" class="btn btn-primary right">Adicionar</button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12 hidden-xs">
+            <div class="container-block round-full">
+                <h1>Registro de Cidades</h1>
+                <table class="table-hover">
+                    <tr ng-if="selectedCities.length < 1">
+                        <td>Não há cidades cadastradas.</td>
+                    </tr>
+                    <tr ng-repeat="item in selectedCities">
+                        <td>{{item.name}}</td>
+                        <td class="text-center"><img ng-src="{{'media/img/' + item.weather.url}}" alt="sun"></td>
+                        <td class="text-center weather-temp font-max">{{item.max}}</td>
+                        <td class="text-center weather-temp font-min">{{item.min}}°</td>
+                        <td class="text-center"><a href="/#/details/{{item.id}}"><img class="icon-more"
+                                                                                      src="media/img/more1.png"
+                                                                                      alt="sun"></a></td>
+                        <td class="text-center"><a ng-click="removeCity(selectedCities, $index)"><img class="icon-more"
+                                                                                                      src="media/img/cross-remove-sign.png"
+                                                                                                      alt="sun"></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12 visible-xs">
+            <div class="container-block round-full">
+                <h3>Registro de Cidades</h3>
+                <ul class="mobile">
+                    <li ng-repeat="item in selectedCities">
+                        <div class="ico-option">
+                            <a class="option-remove" ng-click="removeCity(selectedCities, $index)"><img
+                                    src="media/img/cross-remove-sign.png" alt="remove"></a>
+                            <a href="/#/details/{{item.id}}"><img src="media/img/more1.png" alt="more"></a>
+                        </div>
+                        <a href="/#/details/{{item.id}}">
+                            <div class="img-weather">
+                                <img ng-src="{{'media/img/' + item.weather.url}}" alt="sun">
+                            </div>
+                            {{item.name}} <br>
+                            <span class="temp-max">{{item.max}}°</span>
+                            <span class="temp-min">{{item.min}}°</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
