@@ -1,9 +1,9 @@
-# Todo-list
+# Forecast
 
 Visão geral do projeto:
 
 
-Weather Control é um projeto-teste que visa demonstrar o conhecimento do programador em sua área de atuação. No caso deste projeto, o Frontend.
+Forecast é um projeto-teste que visa demonstrar o conhecimento do programador em sua área de atuação. No caso deste projeto, o Frontend.
 Basicamente, o projeto é um ambiente que fornece uma previsão do tempo para os próximos dias. Também apresenta uma recomendação para praia no final de semana e a variação da temperatura naquele período. Ela é conectada à API externa "OpenWeatherMap" onde os dados são recuperados.
 
 O projeto é composto por apenas uma tela, sendo a tela com os campos busca da localidade em questão (estado / cidade). Logo no cabeçalho, pode-se ver estes dois campos, juntamente ao botão de busca, e logo ao lado uma estrela, para indicar a localidade "favorita" do usuário.
