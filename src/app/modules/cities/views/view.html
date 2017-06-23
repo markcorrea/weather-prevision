@@ -1,5 +1,5 @@
 <nav class="app-navbar">
-    <a class="logo" href="/#/cities">
+    <a class="logo" href="/#/">
         <img src="media/img/brand-white.png" alt="brand">
     </a>
     <div class="navbar-items navbar-default">
@@ -13,30 +13,42 @@
         </ul>
         <ul class="nav navbar-nav top-menu top-user-info">
             <li class="hidden-xs user-info">
-                <select class="form-control">
-                    <option value="">Santa Catarina</option>
+                <select class="form-control"
+                        ng-model="selectedState"
+                        ng-options="item.value as item.name for item in states"
+                        ng-change="stateChange(selectedState)"
+                >
+                    <option value="">Selecione</option>
                 </select>
             </li>
             <li class="hidden-xs">
                 <div class="custom-search">
-                    <input class="form-control" type="text" data-action="grow" placeholder="Cidade">
-                    <div class="input-search">
+                    <input class="form-control"
+                           ng-model="selectedCity"
+                           ng-focus="cityFocus()"
+                           ng-blur="cityBlur()"
+                           type="text"
+                           data-action="grow"
+                           placeholder="Cidade">
+                    <div class="input-search" ng-show="showDesktopCityList">
                         <ul>
-                            <li>
-                                Santa Rita de Pindamonhangaba do Sul
-                            </li>
-                            <li>
-                                item 2
-                            </li>
-                            <li>
-                                item 3
+                            <li ng-repeat="item in cities | filter: selectedCity">
+                                <a ng-click="setCity(item.name)">
+                                    {{item.name}}
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </li>
             <li class="hidden-xs user-info">
-                <button type="button" class="btn btn-search-icon"><i class="fa fa-search" aria-hidden="true"></i>
+                <button type="button" ng-click="getForecast(selectedCity)" class="btn btn-search-icon"><i
+                        class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </li>
+            <li class="user-info">
+                <button type="button" ng-click="setAsFavourite(cityForecast.city.name)" class="btn btn-search-icon {{cityForecast.city.name == favouriteCity ? 'favourite' : ''}}"><i
+                        class="fa fa-star" aria-hidden="true"></i>
                 </button>
             </li>
             <li class="active hidden-xs user-info">
@@ -49,85 +61,58 @@
                     <img src="media/img/user.jpg">
                 </button>
             </li>
-            <li class="visible-xs">
-
-            </li>
         </ul>
     </div>
 </nav>
 <div class="app-details">
     <div class="body-padding">
         <div class="container-block pd-lg round-full visible-xs">
-            <form ng-submit="addCity(city)">
-                <div class="row">
-                    <div class="col-md-5 col-sm-6 col-xs-12">
-                        <div class="form-group">
-                            <select class="form-control" name="state" id="state" ng-model="state"
-                                    ng-options="item.name for item in states track by item.id"
-                                    ng-change="setCity(state)">
-                                <option value="">Estado</option>
-                            </select>
-                        </div>
+            <div class="row">
+                <div class="col-md-5 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <select class="form-control"
+                                ng-model="selectedState"
+                                ng-options="item.value as item.name for item in states"
+                                ng-change="stateChange(selectedState)"
+                        >
+                            <option value="">Selecione</option>
+                        </select>
                     </div>
-                    <div class="col-md-5 col-sm-6 col-xs-12">
-                        <div class="custom-search mobile">
-                            <input class="form-control" type="text" data-action="grow" placeholder="Cidade">
-                            <div class="input-search" style="display: none;">
-                                <ul>
-                                    <li>
-                                        Santa Rita de Pindamonhangaba do Sul
-                                    </li>
-                                    <li>
-                                        item 2
-                                    </li>
-                                    <li>
-                                        item 3
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-sm-6 col-xs-12">
-                        <button type="submit" class="btn btn-primary left mt-15">Buscar
-                        </button>
-                    </div>
-                    <div class="clearfix"></div>
                 </div>
-            </form>
+                <div class="col-md-5 col-sm-6 col-xs-12">
+                    <div class="custom-search mobile">
+                        <input class="form-control"
+                               type="text"
+                               data-action="grow"
+                               placeholder="Cidade"
+                               ng-model="selectedCity"
+                               ng-focus="cityFocus()"
+                               ng-blur="cityBlur()"
+                        >
+                        <div class="input-search" ng-show="showDesktopCityList">
+                            <ul>
+                                <li ng-repeat="item in cities | filter: selectedCity">
+                                    <a ng-click="setCity(item.name)">
+                                        {{item.name}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6 col-xs-12">
+                    <button type="submit" ng-click="getForecast(selectedCity)" class="btn btn-primary left mt-15">Buscar
+                    </button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
         </div>
         <div class="container-block pd-lg round-full">
             <div class="border-bottom">
-                <h1 class="hidden-xs">{{city.name}}, {{city.state.initials | uppercase}}</h1>
-                <h4 class="visible-xs">{{city.name}}, {{city.state.initials | uppercase}}</h4>
+                <h1 class="hidden-xs">{{cityForecast.city.name}}</h1>
+                <h4 class="visible-xs">{{cityForecast.city.name}}</h4>
             </div>
 
-            <!--<div class="row">-->
-            <!--<div class="col-md-12">-->
-            <!--<div class="border-bottom">-->
-            <!--<div class="main-icon">-->
-            <!--<img ng-src="{{'media/img/' + city.weather.url}}" alt="sun">-->
-            <!--</div>-->
-            <!--<ul>-->
-            <!--<li>-->
-            <!--Temperatura: <span-->
-            <!--class="weather-temp font-current current">{{city.temperature}}°</span>-->
-            <!--</li>-->
-            <!--<li>-->
-            <!--Máxima: <span class="weather-temp font-max current"> {{city.max}}°</span>-->
-            <!--</li>-->
-            <!--<li>-->
-            <!--Mínima: <span class="weather-temp font-min current"> {{city.min}}°</span>-->
-            <!--</li>-->
-            <!--<li>-->
-            <!--Umidade relativa do ar: <span class="weather-temp font-current current"> {{city.umidity}}%</span>-->
-            <!--</li>-->
-            <!--<li>-->
-            <!--Vento máximo: <span class="weather-temp font-wind current"> {{city.wind}} </span>Km/h-->
-            <!--</li>-->
-            <!--</ul>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
             <div class="row">
                 <div class="col-md-12 col-sm-12 mt-20 mb-10 next-day-title">
                     <h3 class="mb-15">Previsão para os próximos dias:</h3>
@@ -138,17 +123,19 @@
                             {{getDayOfTheWeek(item.dt).short}}
                         </div>
                         <div class="icon-weather">
-                            <img ng-src="{{setWeatherIcon(item.weather[0].icon)}}" alt="sun">
+                            <img src="{{setWeatherIcon(item.weather[0].icon)}}" alt="sun">
                         </div>
                         <div class="weather-temp font-current mb-5">
-                            {{item.temp.day  | filterTemp}}°
+                            {{item.temp.day | filterTemp}}°
                         </div>
                         <ul class="mt-50">
                             <li>
-                                Máx: <span class="weather-temp font-max current"> {{item.temp.max  | filterTemp}}°</span>
+                                Máx: <span
+                                    class="weather-temp font-max current"> {{item.temp.max  | filterTemp}}°</span>
                             </li>
                             <li>
-                                Mín: <span class="weather-temp font-min current"> {{item.temp.min  | filterTemp}}°</span>
+                                Mín: <span
+                                    class="weather-temp font-min current"> {{item.temp.min  | filterTemp}}°</span>
                             </li>
                         </ul>
                     </div>
@@ -162,11 +149,13 @@
                         <h3 class="text-center">Máxima e mínima:</h3>
                         <ul class="blocks-line-height">
                             <li class="mb-30">
-                                Máx: <span class="weather-temp font-max current"> {{maxmin.max | filterTemp}}°</span><br>
+                                Máx: <span
+                                    class="weather-temp font-max current"> {{maxmin.max | filterTemp}}°</span><br>
                                 <span class="weather-day-label">{{getDayOfTheWeek(maxmin.daymax).long}}</span>
                             </li>
                             <li class="mb-10">
-                                Mín: <span class="weather-temp font-min current"> {{maxmin.min | filterTemp}}°</span><br>
+                                Mín: <span
+                                    class="weather-temp font-min current"> {{maxmin.min | filterTemp}}°</span><br>
                                 <span class="weather-day-label">{{getDayOfTheWeek(maxmin.daymin).long}}</span>
                             </li>
                         </ul>
@@ -178,7 +167,7 @@
                     <div class="mt-20 mb-10 next-day-title">
                         <h3 class="text-center">Final de semana na praia?</h3>
                         <div class="icon-beach">
-                            <img ng-src="{{setWeatherIcon(beachRecommendation.weather[0].icon)}}" alt="sun">
+                            <img src="{{setWeatherIcon(beachRecommendation.weather[0].icon)}}" alt="sun">
                         </div>
                         <ul class="blocks blocks-line-height">
                             <li>
@@ -203,7 +192,6 @@
                                 chart-series="series"
                                 chart-options="options"
                                 chart-dataset-override="datasetOverride"
-                                chart-click="onClick"
                                 height="100%">
                         </canvas>
                     </div>

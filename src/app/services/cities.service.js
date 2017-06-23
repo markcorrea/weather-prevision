@@ -1,7 +1,7 @@
 (function () {
-   'use strict';
+    'use strict';
 
-    function getAPIURL() {
+    function getMockURL() {
         return 'mocks/';
     }
 
@@ -16,73 +16,37 @@
         var $public = {};
         var $private = {};
 
-        $private.setUrlAPIDefault = function (afterURL) {
+        $private.setUrlMockDefault = function (afterURL) {
             afterURL = afterURL || '';
-            $private.API = $resource(getAPIURL() + afterURL, {}, defaultOptionsResource());
+            $private.API = $resource(getMockURL() + afterURL, {}, defaultOptionsResource());
         };
 
+        //
+        // Serviço que retorna um JSON com todos os estados.
+        //
         $public.getStates = function () {
             var deferred = $q.defer();
 
-            $private.setUrlAPIDefault('states.json');
+            $private.setUrlMockDefault('states.json');
 
             $private.API.get().$promise.then(function (result) {
-                if (result.status === 'success') {
-                    deferred.resolve(result);
-                } else {
-                    deferred.reject(result);
-                }
+                deferred.resolve(result);
             }, function (result) {
                 deferred.reject(result);
             });
             return deferred.promise;
         };
 
-        $public.getCitiesByStateId = function (options) {
+        //
+        // Serviço que retorna um JSON com todas as cidades, a partir do estado selecionado.
+        //
+        $public.getCitiesByStateValue = function (options) {
             var deferred = $q.defer();
 
-            $private.setUrlAPIDefault('states/' + options.id + '.json');
+            $private.setUrlMockDefault('states/cities-' + options.state + '.json');
 
             $private.API.get().$promise.then(function (result) {
-               if (result.status === 'success') {
-                   deferred.resolve(result);
-               } else {
-                   deferred.reject(result);
-               }
-            }, function (result) {
-                deferred.reject(result);
-            });
-            return deferred.promise;
-        };
-
-        $public.getSelectedCities = function (options) {
-            var deferred = $q.defer();
-
-            $private.setUrlAPIDefault('selected-cities.json');
-
-            $private.API.get().$promise.then(function (result) {
-                if (result.status === 'success') {
-                    deferred.resolve(result);
-                } else {
-                    deferred.reject(result);
-                }
-            }, function (result) {
-                deferred.reject(result);
-            });
-            return deferred.promise;
-        };
-
-        $public.getCityById = function (options) {
-            var deferred = $q.defer();
-
-            $private.setUrlAPIDefault('cities/' + options.id + '.json');
-
-            $private.API.get().$promise.then(function (result) {
-                if (result.status === 'success') {
-                    deferred.resolve(result);
-                } else {
-                    deferred.reject(result);
-                }
+                deferred.resolve(result);
             }, function (result) {
                 deferred.reject(result);
             });
@@ -92,5 +56,5 @@
         return $public;
     }
 
-    angular.module('app.services.cities', []).factory('CitiesService', CitiesService);
+    angular.module('app.services').factory('CitiesService', CitiesService);
 }());

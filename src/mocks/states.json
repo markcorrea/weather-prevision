@@ -1,20 +1,139 @@
 {
   "data": [
     {
-      "id": 1,
-      "name": "Rio Grande do Sul",
-      "initials": "rs"
+      "id": "1",
+      "value": "ac",
+      "name": "Acre"
     },
     {
-      "id": 2,
-      "name": "Santa Catarina",
-      "initials": "sc"
+      "id": "2",
+      "value": "al",
+      "name": "Alagoas"
     },
     {
-      "id": 3,
-      "name": "São Paulo",
-      "initials": "sp"
+      "id": "3",
+      "value": "am",
+      "name": "Amazonas"
+    },
+    {
+      "id": "4",
+      "value": "ap",
+      "name": "Amapá"
+    },
+    {
+      "id": "5",
+      "value": "ba",
+      "name": "Bahia"
+    },
+    {
+      "id": "6",
+      "value": "ce",
+      "name": "Ceará"
+    },
+    {
+      "id": "7",
+      "value": "df",
+      "name": "Distrito Federal"
+    },
+    {
+      "id": "8",
+      "value": "es",
+      "name": "Espírito Santo"
+    },
+    {
+      "id": "9",
+      "value": "go",
+      "name": "Goiás"
+    },
+    {
+      "id": "10",
+      "value": "ma",
+      "name": "Maranhão"
+    },
+    {
+      "id": "11",
+      "value": "mg",
+      "name": "Minas Gerais"
+    },
+    {
+      "id": "12",
+      "value": "ms",
+      "name": "Mato Grosso do Sul"
+    },
+    {
+      "id": "13",
+      "value": "mt",
+      "name": "Mato Grosso"
+    },
+    {
+      "id": "14",
+      "value": "pa",
+      "name": "Pará"
+    },
+    {
+      "id": "15",
+      "value": "pb",
+      "name": "Paraíba"
+    },
+    {
+      "id": "16",
+      "value": "pe",
+      "name": "Pernambuco"
+    },
+    {
+      "id": "17",
+      "value": "pi",
+      "name": "Piauí"
+    },
+    {
+      "id": "18",
+      "value": "pr",
+      "name": "Paraná"
+    },
+    {
+      "id": "19",
+      "value": "rj",
+      "name": "Rio de Janeiro"
+    },
+    {
+      "id": "20",
+      "value": "rn",
+      "name": "Rio Grande do Norte"
+    },
+    {
+      "id": "21",
+      "value": "ro",
+      "name": "Rondônia"
+    },
+    {
+      "id": "22",
+      "value": "rr",
+      "name": "Roraima"
+    },
+    {
+      "id": "23",
+      "value": "rs",
+      "name": "Rio Grande do Sul"
+    },
+    {
+      "id": "24",
+      "value": "sc",
+      "name": "Santa Catarina"
+    },
+    {
+      "id": "25",
+      "value": "se",
+      "name": "Sergipe"
+    },
+    {
+      "id": "26",
+      "value": "sp",
+      "name": "São Paulo"
+    },
+    {
+      "id": "27",
+      "value": "to",
+      "name": "Tocantins"
     }
-  ],
-  "status": "success"
+  ]
 }

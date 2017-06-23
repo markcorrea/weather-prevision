@@ -483,6 +483,13 @@ ul.mobile {
       background-color: white !important;
       border: none;
     }
+    &.favourite {
+     color: #FFE300;
+      &:hover {
+        color: #3097D1;
+        background-color: #FFE300;
+      }
+    }
   }
   &.btn-primary {
     height: 35px;
@@ -608,17 +615,25 @@ table {
     -webkit-box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.3);
     -moz-box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.3);
     box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.3);
+    max-height:300px;
+    overflow-y: auto;
     ul {
       list-style-type: none;
       margin: 0px;
       padding: 0px;
       width: 100%;
       li {
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          padding: 6px 6px !important;
+          font-size: 0.7rem;
+          text-decoration: none;
+        }
         margin: 0 !important;
         border-top: solid thin #eeeeee;
         width: 100%;
-        padding: 6px 6px !important;
-        font-size: 0.7rem;
         &:first-child {
           border-top: none;
         }

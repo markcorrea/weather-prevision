@@ -20,6 +20,9 @@
             $private.API = $resource(getAPIURL(city), {}, defaultOptionsResource());
         };
 
+        //
+        // Serviço que retorna um JSON com a previsão para os próximos dias para a cidade enviada por parâmetro.
+        //
         $public.getWeatherByCityName = function (options) {
             var deferred = $q.defer();
 
@@ -40,5 +43,5 @@
         return $public;
     }
 
-    angular.module('app.services.weather', []).factory('WeatherService', WeatherService);
+    angular.module('app.services').factory('WeatherService', WeatherService);
 }());
