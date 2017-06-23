@@ -34,11 +34,6 @@
     &.blocks {
       padding: 0 !important;
     }
-    &.variation {
-      li {
-        line-height: 0.5;
-      }
-    }
   }
 
   .next-day-title {
@@ -48,10 +43,8 @@
 
   .next-day-block {
     border-right: solid thin #eeeeee;
-    //padding: 0;
-    &:first-child {
-      border-left: solid thin #eeeeee;
-    }
+    border-left: solid thin #eeeeee;
+    padding-bottom: 15px;
 
     .week-day {
       width: 100%;
@@ -61,8 +54,8 @@
     }
 
     .icon-weather {
-      margin-top: 15px;
-      margin-bottom: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
       text-align: center;
       img {
         max-width: 50px;
@@ -70,7 +63,7 @@
     }
   }
   .icon-beach {
-    margin: 15px auto !important;
+    margin: 5px auto !important;
     text-align: center;
     img {
       max-width: 75px;
@@ -78,7 +71,7 @@
   }
   .weather-temp {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     line-height: 95%;
     &.font-max {
@@ -113,6 +106,31 @@
         width: 100%;
         max-width: 128px;
       }
+    }
+    .next-day-block {
+      border-left: none;
+      padding-bottom: 0px;
+      &:first-child, &:nth-child(4) {
+        border-left: solid thin #eeeeee;
+      }
+    }
+    .block-height-sm {
+      height: 180px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .block-height-md {
+    height: 180px;
+  }
+  .next-day-block {
+    border-left: none;
+    &:first-child{
+      border-left: solid thin #eeeeee;
+    }
+    &:nth-child(4) {
+      border-left: none !important;
     }
   }
 }

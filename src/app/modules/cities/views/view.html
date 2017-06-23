@@ -133,25 +133,22 @@
                     <h3 class="mb-15">Previsão para os próximos dias:</h3>
                 </div>
                 <div class="col-md-12 col-sm-12">
-                    <div ng-repeat="item in city.nextDays" class="next-day-block col-md-2 col-sm-2 col-xs-6">
+                    <div ng-repeat="item in dailyForecast" class="next-day-block col-md-2 col-sm-4 col-xs-12">
                         <div class="week-day">
-                            {{item.day}}
+                            {{getDayOfTheWeek(item.dt).short}}
                         </div>
                         <div class="icon-weather">
-                            <img ng-src="{{'media/img/' + item.weather.url}}" alt="sun">
+                            <img ng-src="{{setWeatherIcon(item.weather[0].icon)}}" alt="sun">
                         </div>
-                        <!--<div class="weather-temp font-max">-->
-                        <!--{{item.max}}°-->
-                        <!--</div>-->
-                        <div class="weather-temp font-current">
-                            {{item.max}}°
+                        <div class="weather-temp font-current mb-5">
+                            {{item.temp.day  | filterTemp}}°
                         </div>
                         <ul class="mt-50">
                             <li>
-                                Máx: <span class="weather-temp font-max current"> {{item.max}}°</span>
+                                Máx: <span class="weather-temp font-max current"> {{item.temp.max  | filterTemp}}°</span>
                             </li>
                             <li>
-                                Mín: <span class="weather-temp font-min current"> {{item.min}}°</span>
+                                Mín: <span class="weather-temp font-min current"> {{item.temp.min  | filterTemp}}°</span>
                             </li>
                         </ul>
                     </div>
@@ -159,49 +156,56 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="container-block pd-md round-full">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="container-block block-height-md pd-md round-full">
                     <div class="mt-20 mb-10 next-day-title">
                         <h3 class="text-center">Máxima e mínima:</h3>
-                        <ul class="variation">
+                        <ul class="blocks-line-height">
                             <li class="mb-30">
-                                Máx: <span class="weather-temp font-max current"> {{city.max}}°</span><br>
-                                <span class="weather-day-label">quinta-feira</span>
+                                Máx: <span class="weather-temp font-max current"> {{maxmin.max | filterTemp}}°</span><br>
+                                <span class="weather-day-label">{{getDayOfTheWeek(maxmin.daymax).long}}</span>
                             </li>
-                            <li class="mb-30">
-                                Mín: <span class="weather-temp font-min current"> {{city.min}}°</span><br>
-                                <span class="weather-day-label">sabado</span>
+                            <li class="mb-10">
+                                Mín: <span class="weather-temp font-min current"> {{maxmin.min | filterTemp}}°</span><br>
+                                <span class="weather-day-label">{{getDayOfTheWeek(maxmin.daymin).long}}</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="container-block pd-md round-full">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="container-block block-height-sm pd-md round-full">
                     <div class="mt-20 mb-10 next-day-title">
-                        <h3 class="text-center mb-15">Final de semana na praia?</h3>
+                        <h3 class="text-center">Final de semana na praia?</h3>
                         <div class="icon-beach">
-                            <img ng-src="{{'media/img/' + city.weather.url}}" alt="sun">
+                            <img ng-src="{{setWeatherIcon(beachRecommendation.weather[0].icon)}}" alt="sun">
                         </div>
-                        <ul class="blocks">
+                        <ul class="blocks blocks-line-height">
                             <li>
-                                <span class="weather-temp font-current current"> {{city.max}}°</span>
+                                <span class="weather-temp font-current current">{{beachRecommendation.temp.day | filterTemp}}°</span><br>
+                                <span class="weather-day-label">sábado</span>
                             </li>
-                            <li>
-                                <span class="weather-temp font-max current">Recomendado!</span>
+                            <li class="mt-15 mb-20">
+                                <span class="weather-temp {{beachRecommendation.isGood ? 'font-min' : 'font-max'}} current">{{beachRecommendation.isGood ? 'Recomendado!' : 'Não recomendado'}}</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="container-block pd-md round-full">
-                    <div class="mt-20 mb-15 next-day-title">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="container-block block-height-md pd-md round-full">
+                    <div class="mt-20 next-day-title">
                         <h3 class="text-center mb-10">Variação no período:</h3>
-                        <canvas id="line" class="chart chart-line" chart-data="data"
-                                chart-labels="labels" chart-series="series" chart-options="options"
-                                chart-dataset-override="datasetOverride" chart-click="onClick">
-                        </canvas
+                        <canvas id="line"
+                                class="chart chart-line"
+                                chart-data="data"
+                                chart-labels="labels"
+                                chart-series="series"
+                                chart-options="options"
+                                chart-dataset-override="datasetOverride"
+                                chart-click="onClick"
+                                height="100%">
+                        </canvas>
                     </div>
                 </div>
             </div>

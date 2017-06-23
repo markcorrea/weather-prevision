@@ -551,6 +551,11 @@ ul.mobile li a {
 }
 
 /* line 459, ../sass/commons/_common.scss */
+.blocks-line-height {
+  line-height: 0.7;
+}
+
+/* line 463, ../sass/commons/_common.scss */
 .btn {
   -webkit-border-radius: 5px !important;
   -moz-border-radius: 5px !important;
@@ -561,31 +566,31 @@ ul.mobile li a {
   border-color: #1C73A5;
   color: white;
 }
-/* line 468, ../sass/commons/_common.scss */
+/* line 472, ../sass/commons/_common.scss */
 .btn:hover {
   background-color: #3097D1;
   color: white;
 }
-/* line 472, ../sass/commons/_common.scss */
+/* line 476, ../sass/commons/_common.scss */
 .btn.btn-search-icon {
   width: 35px;
   height: 35px;
   padding: 0 !important;
   color: white;
 }
-/* line 477, ../sass/commons/_common.scss */
+/* line 481, ../sass/commons/_common.scss */
 .btn.btn-search-icon:hover {
   color: #3097D1;
   background-color: white !important;
   border: none;
 }
-/* line 483, ../sass/commons/_common.scss */
+/* line 487, ../sass/commons/_common.scss */
 .btn.btn-primary {
   height: 35px;
   border: none;
 }
 
-/* line 489, ../sass/commons/_common.scss */
+/* line 493, ../sass/commons/_common.scss */
 .form-control {
   height: 35px;
   padding: 10px 15px;
@@ -596,12 +601,12 @@ ul.mobile li a {
   width: 180px;
 }
 
-/* line 501, ../sass/commons/_common.scss */
+/* line 505, ../sass/commons/_common.scss */
 .body-padding {
   padding: 1.5rem 0.5rem !important;
 }
 
-/* line 505, ../sass/commons/_common.scss */
+/* line 509, ../sass/commons/_common.scss */
 .container-block {
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
@@ -609,101 +614,101 @@ ul.mobile li a {
   border-right: 1px solid rgba(0, 0, 0, 0.125);
   background-color: white;
 }
-/* line 511, ../sass/commons/_common.scss */
+/* line 515, ../sass/commons/_common.scss */
 .container-block.pd-lg {
   padding: 1.5rem !important;
 }
-/* line 514, ../sass/commons/_common.scss */
+/* line 518, ../sass/commons/_common.scss */
 .container-block.pd-md {
   padding: 0 1.0rem !important;
 }
-/* line 518, ../sass/commons/_common.scss */
+/* line 522, ../sass/commons/_common.scss */
 .container-block.round-top {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   border-top-right-radius: 0.25rem;
   border-top-left-radius: 0.25rem;
 }
-/* line 526, ../sass/commons/_common.scss */
+/* line 530, ../sass/commons/_common.scss */
 .container-block.round-bottom {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
   margin-bottom: 1.5rem;
 }
-/* line 532, ../sass/commons/_common.scss */
+/* line 536, ../sass/commons/_common.scss */
 .container-block.round-full {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   margin-bottom: 1.5rem;
 }
-/* line 537, ../sass/commons/_common.scss */
+/* line 541, ../sass/commons/_common.scss */
 .container-block.round-title {
   padding: 1rem 1.5rem !important;
   margin-bottom: 1.5rem;
 }
 
-/* line 543, ../sass/commons/_common.scss */
+/* line 547, ../sass/commons/_common.scss */
 .fa-trash {
   color: #D61236;
   font-size: 15px;
 }
 
-/* line 548, ../sass/commons/_common.scss */
+/* line 552, ../sass/commons/_common.scss */
 table {
   width: 100%;
 }
-/* line 551, ../sass/commons/_common.scss */
+/* line 555, ../sass/commons/_common.scss */
 table tr {
   border-top: solid thin #eeeeee;
 }
-/* line 553, ../sass/commons/_common.scss */
+/* line 557, ../sass/commons/_common.scss */
 table tr:first-child {
   border-top: none !important;
 }
-/* line 556, ../sass/commons/_common.scss */
+/* line 560, ../sass/commons/_common.scss */
 table tr td {
   padding: 10px 15px;
   font-size: 0.9rem;
   font-weight: 500;
   color: #3097D1;
 }
-/* line 558, ../sass/commons/_common.scss */
+/* line 562, ../sass/commons/_common.scss */
 table tr td:first-child {
   border-left: none;
 }
-/* line 565, ../sass/commons/_common.scss */
+/* line 569, ../sass/commons/_common.scss */
 table tr td.weather-temp {
   font-size: 1.2rem;
   font-weight: bold;
 }
-/* line 568, ../sass/commons/_common.scss */
+/* line 572, ../sass/commons/_common.scss */
 table tr td.weather-temp.font-max {
   color: #CC3333;
 }
-/* line 571, ../sass/commons/_common.scss */
+/* line 575, ../sass/commons/_common.scss */
 table tr td.weather-temp.font-min {
   color: #999999;
 }
-/* line 575, ../sass/commons/_common.scss */
+/* line 579, ../sass/commons/_common.scss */
 table tr td img {
   max-width: 50px;
   max-height: 50px;
 }
-/* line 578, ../sass/commons/_common.scss */
+/* line 582, ../sass/commons/_common.scss */
 table tr td img.icon-more {
   max-width: 25px;
   max-height: 25px;
 }
-/* line 585, ../sass/commons/_common.scss */
+/* line 589, ../sass/commons/_common.scss */
 table tr.totals td {
   color: #444444;
   font-weight: bold;
 }
 
-/* line 594, ../sass/commons/_common.scss */
+/* line 598, ../sass/commons/_common.scss */
 .custom-search {
   position: relative;
 }
-/* line 596, ../sass/commons/_common.scss */
+/* line 600, ../sass/commons/_common.scss */
 .custom-search .input-search {
   z-index: 1000;
   min-width: 180px;
@@ -716,14 +721,14 @@ table tr.totals td {
   -moz-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.3);
 }
-/* line 607, ../sass/commons/_common.scss */
+/* line 611, ../sass/commons/_common.scss */
 .custom-search .input-search ul {
   list-style-type: none;
   margin: 0px;
   padding: 0px;
   width: 100%;
 }
-/* line 612, ../sass/commons/_common.scss */
+/* line 616, ../sass/commons/_common.scss */
 .custom-search .input-search ul li {
   margin: 0 !important;
   border-top: solid thin #eeeeee;
@@ -731,11 +736,11 @@ table tr.totals td {
   padding: 6px 6px !important;
   font-size: 0.7rem;
 }
-/* line 618, ../sass/commons/_common.scss */
+/* line 622, ../sass/commons/_common.scss */
 .custom-search .input-search ul li:first-child {
   border-top: none;
 }
-/* line 621, ../sass/commons/_common.scss */
+/* line 625, ../sass/commons/_common.scss */
 .custom-search .input-search ul li:hover {
   background-color: #e6e6e6;
 }
@@ -970,92 +975,118 @@ table tr.totals td {
 .app-details ul.blocks {
   padding: 0 !important;
 }
-/* line 38, ../sass/components/_details.scss */
-.app-details ul.variation li {
-  line-height: 0.5;
-}
-/* line 44, ../sass/components/_details.scss */
+/* line 39, ../sass/components/_details.scss */
 .app-details .next-day-title {
   font-size: 1rem;
   font-weight: 500;
 }
-/* line 49, ../sass/components/_details.scss */
+/* line 44, ../sass/components/_details.scss */
 .app-details .next-day-block {
   border-right: solid thin #eeeeee;
-}
-/* line 52, ../sass/components/_details.scss */
-.app-details .next-day-block:first-child {
   border-left: solid thin #eeeeee;
+  padding-bottom: 15px;
 }
-/* line 56, ../sass/components/_details.scss */
+/* line 49, ../sass/components/_details.scss */
 .app-details .next-day-block .week-day {
   width: 100%;
   text-align: center;
   border-bottom: solid thin #eeeeee;
   padding: 5px 2px;
 }
-/* line 63, ../sass/components/_details.scss */
+/* line 56, ../sass/components/_details.scss */
 .app-details .next-day-block .icon-weather {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-align: center;
 }
-/* line 67, ../sass/components/_details.scss */
+/* line 60, ../sass/components/_details.scss */
 .app-details .next-day-block .icon-weather img {
   max-width: 50px;
 }
-/* line 72, ../sass/components/_details.scss */
+/* line 65, ../sass/components/_details.scss */
 .app-details .icon-beach {
-  margin: 15px auto !important;
+  margin: 5px auto !important;
   text-align: center;
 }
-/* line 75, ../sass/components/_details.scss */
+/* line 68, ../sass/components/_details.scss */
 .app-details .icon-beach img {
   max-width: 75px;
 }
-/* line 79, ../sass/components/_details.scss */
+/* line 72, ../sass/components/_details.scss */
 .app-details .weather-temp {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   line-height: 95%;
 }
-/* line 84, ../sass/components/_details.scss */
+/* line 77, ../sass/components/_details.scss */
 .app-details .weather-temp.font-max {
   color: #CC3333;
 }
-/* line 87, ../sass/components/_details.scss */
+/* line 80, ../sass/components/_details.scss */
 .app-details .weather-temp.font-min {
   color: #3097D1;
 }
-/* line 90, ../sass/components/_details.scss */
+/* line 83, ../sass/components/_details.scss */
 .app-details .weather-temp.font-current {
   color: #999999;
 }
-/* line 93, ../sass/components/_details.scss */
+/* line 86, ../sass/components/_details.scss */
 .app-details .weather-temp.font-wind {
   color: #92C7D3;
 }
-/* line 96, ../sass/components/_details.scss */
+/* line 89, ../sass/components/_details.scss */
 .app-details .weather-temp.current {
   font-size: 1rem;
 }
-/* line 100, ../sass/components/_details.scss */
+/* line 93, ../sass/components/_details.scss */
 .app-details .weather-day-label {
   font-size: 0.7em;
   color: #999999;
 }
 
 @media (min-width: 768px) {
-  /* line 108, ../sass/components/_details.scss */
+  /* line 101, ../sass/components/_details.scss */
   .app-details .main-icon {
     float: right;
     margin: 10px 20px;
     max-width: 128px;
   }
-  /* line 112, ../sass/components/_details.scss */
+  /* line 105, ../sass/components/_details.scss */
   .app-details .main-icon img {
     width: 100%;
     max-width: 128px;
+  }
+  /* line 110, ../sass/components/_details.scss */
+  .app-details .next-day-block {
+    border-left: none;
+    padding-bottom: 0px;
+  }
+  /* line 113, ../sass/components/_details.scss */
+  .app-details .next-day-block:first-child, .app-details .next-day-block:nth-child(4) {
+    border-left: solid thin #eeeeee;
+  }
+  /* line 117, ../sass/components/_details.scss */
+  .app-details .block-height-sm {
+    height: 180px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 124, ../sass/components/_details.scss */
+  .block-height-md {
+    height: 180px;
+  }
+
+  /* line 127, ../sass/components/_details.scss */
+  .next-day-block {
+    border-left: none;
+  }
+  /* line 129, ../sass/components/_details.scss */
+  .next-day-block:first-child {
+    border-left: solid thin #eeeeee;
+  }
+  /* line 132, ../sass/components/_details.scss */
+  .next-day-block:nth-child(4) {
+    border-left: none !important;
   }
 }

@@ -92,5 +92,5 @@
         return $public;
     }
 
-    angular.module('app.services', []).factory('CitiesService', CitiesService);
+    angular.module('app.services.cities', []).factory('CitiesService', CitiesService);
 }());
