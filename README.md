@@ -67,6 +67,9 @@ ANGULAR-RESOURCE
 ADMIN-LTE
 - Biblioteca de temas para construção de dashboards e painéis de controle, fornece classes em CSS com base no Bootstrap 3.
 
+GIT
+- Sistema para controle de versão de projetos.
+
 
 
 # Instalação do projeto:
